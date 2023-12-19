@@ -8,7 +8,7 @@ const Search = () => {
           <input
             type="text"
             placeholder="Find a user"
-            className="border rounded-md py-2 px-4 focus:outline-none focus:border-blue-500"
+            className=" py-2 px-4 focus:outline-none  bg-slate-600  border-b-2"
           />
         </div>
         <div className="flex items-center  hover:bg-slate-700 w-full p-2 rounded-lg cursor-pointer">
