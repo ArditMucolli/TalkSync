@@ -22,7 +22,7 @@ const Login = () => {
   return (
     <div className="flex justify-center items-center h-screen bg-gray-100">
       <div className="bg-white p-8 rounded shadow-md w-96">
-        <h2 className="text-2xl font-semibold mb-4 text-center">Register</h2>
+        <h2 className="text-2xl font-semibold mb-4 text-center">Login</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <input
             className="w-full px-4 py-2 border rounded focus:outline-none focus:border-blue-500"

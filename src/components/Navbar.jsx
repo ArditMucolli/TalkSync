@@ -11,7 +11,7 @@ const Navbar = () => {
       <div className="flex items-center gap-2">
         <img
           className="w-12 h-12 rounded-full object-cover sm:w-8 sm:h-8"
-          src={currentUser.photoUrl}
+          src={currentUser.photoURL}
           alt=""
         />
         <span className="text-white text-sm sm:text-base">

@@ -39,6 +39,44 @@ const Search = () => {
     e.code === "Enter" && handleSearch();
   };
 
+  const handleSelect = async () => {
+    //check whether the group(chats in firestore) exists, if not create
+    const combinedId =
+      currentUser.uid > user.uid
+        ? currentUser.uid + user.uid
+        : user.uid + currentUser.uid;
+    try {
+      const res = await getDoc(doc(db, "chats", combinedId));
+
+      if (!res.exists()) {
+        //create a chat in chats collection
+        await setDoc(doc(db, "chats", combinedId), { messages: [] });
+
+        //create user chats
+        await updateDoc(doc(db, "userChats", currentUser.uid), {
+          [combinedId + ".userInfo"]: {
+            uid: user.uid,
+            displayName: user.displayName,
+            photoURL: user.photoURL,
+          },
+          [combinedId + ".date"]: serverTimestamp(),
+        });
+
+        await updateDoc(doc(db, "userChats", user.uid), {
+          [combinedId + ".userInfo"]: {
+            uid: currentUser.uid,
+            displayName: currentUser.displayName,
+            photoURL: currentUser.photoURL,
+          },
+          [combinedId + ".date"]: serverTimestamp(),
+        });
+      }
+    } catch (err) {}
+
+    setUser(null);
+    setUsername("");
+  };
+
   return (
     <div className="flex items-start ml-3 mt-5">
       <div className="flex flex-col items-start justify-center text-center">
@@ -46,6 +84,7 @@ const Search = () => {
           <input
             type="text"
             placeholder="Find a user"
+            value={username}
             onKeyDown={handleKey}
             onChange={(e) => setUsername(e.target.value)}
             className=" py-2 px-4 focus:outline-none  bg-slate-600  border-b-2"
@@ -53,7 +92,10 @@ const Search = () => {
         </div>
         {err && <span>User not found!</span>}
         {user && (
-          <div className="flex items-center  hover:bg-slate-700 w-full p-2 rounded-lg cursor-pointer">
+          <div
+            onClick={handleSelect}
+            className="flex items-center  hover:bg-slate-700 w-full p-2 rounded-lg cursor-pointer"
+          >
             <div className="flex items-center gap-4 flex-grow">
               <img
                 className="w-12 h-12 rounded-full object-cover"
