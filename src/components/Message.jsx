@@ -30,7 +30,7 @@ const Message = ({ message }) => {
         />
       </div>
       <div
-        className={`text-white p-2 rounded-lg ${
+        className={`bg-blue-500 text-white p-2 rounded-lg ${
           message.senderId === currentUser.uid
             ? "ml-auto rounded-br-none"
             : "rounded-bl-none"
