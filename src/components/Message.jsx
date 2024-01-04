@@ -30,15 +30,13 @@ const Message = ({ message }) => {
         />
       </div>
       <div
-        className={`bg-blue-500 text-white p-5 rounded-lg ${
+        className={`bg-blue-500 text-white p-2 rounded-lg ${
           message.senderId === currentUser.uid
-            ? "ml-auto w-1/2 rounded-bl-none"
-            : "w-1/2 rounded-br-none"
-        }`}
+            ? "ml-auto rounded-br-none"
+            : "rounded-bl-none"
+        } ${message.text.length > 50 ? "w-1/2" : "w-auto"}`}
       >
-        <p className="mb-4 pt-3 pb-3 rounded-t-none rounded-tr-lg rounded-b-lg rounded-l-lg">
-          {message.text}
-        </p>
+        <p className=" ml-4 ">{message.text}</p>
         {message.img && <img src={message.img} alt="" />}
       </div>
     </div>
