@@ -73,12 +73,21 @@ const Input = () => {
     setText("");
     setImg(null);
   };
+
+  const handleEnterKeyPress = (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      handleSend();
+    }
+  };
+
   return (
     <div className="flex items-center justify-between h-16 p-11 ">
       <input
         type="text"
         placeholder="Type something..."
         onChange={(e) => setText(e.target.value)}
+        onKeyDown={handleEnterKeyPress}
         value={text}
         className="w-full outline-none border-0 text-slate-800"
       />
