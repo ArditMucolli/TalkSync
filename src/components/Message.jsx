@@ -29,9 +29,13 @@ const Message = ({ message }) => {
         <span className="text-gray-400">just now</span>
       </div>
       <div className="">
-        <p className=" max-w-min bg-white mb-4 pt-3 pb-3 pr-5 pl-5 rounded-t-none rounded-tr-lg rounded-b-lg rounded-l-lg">
+        <p
+          className={`mb-4 pt-3 pb-3 pr-5 pl-5 rounded-t-none rounded-tr-lg rounded-b-lg rounded-l-lg 
+          ${message.senderId === currentUser.uid ? "ml-auto w-1/2" : "w-1/2"}`}
+        >
           {message.text}
         </p>
+
         {message.img && <img src={message.img} alt="" />}
       </div>
     </div>
