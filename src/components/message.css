@@ -1,7 +1,5 @@
 .messages {
-  background-color: #ddddf7;
   padding: 10px;
-  height: calc(100% - 160px);
 
   p {
     background-color: #4e74f2;
