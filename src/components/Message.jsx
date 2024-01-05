@@ -14,7 +14,7 @@ const Message = ({ message }) => {
 
   return (
     <div
-      className={`flex gap-4 mb-20 ${
+      className={`flex gap-4 mb-20 mt-10 ${
         message.senderId === currentUser.uid ? "flex-row-reverse" : "flex-row"
       }`}
     >
