@@ -18,9 +18,9 @@ const Message = ({ message }) => {
         message.senderId === currentUser.uid ? "flex-row-reverse" : "flex-row"
       }`}
     >
-      <div className="flex items-center">
+      <div className="flex flex-col pl-2 pr-2">
         <img
-          className="w-12 h-12 ml-2 rounded-full object-cover sm:w-8 sm:h-8"
+          className="w-12 h-12 rounded-full object-cover sm:w-8 sm:h-8"
           src={
             message.senderId === currentUser.uid
               ? currentUser.photoURL
@@ -28,6 +28,13 @@ const Message = ({ message }) => {
           }
           alt=""
         />
+        <div className="flex flex-col text-center">
+          <p className="text-sm font-semibold ">
+            {message.senderId === currentUser.uid
+              ? "Me"
+              : data.user.displayName}
+          </p>
+        </div>
       </div>
       <div
         className={`bg-blue-500 text-white p-2 rounded-lg ${
