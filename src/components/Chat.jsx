@@ -10,8 +10,8 @@ const Chat = () => {
   const { data } = useContext(ChatContext);
   return (
     <div className="bg-zinc-300 w-3/4 h-screen flex flex-col">
-      <div className="bg-slate-600 p-3 flex justify-between">
-        <span className="text-lg font-bold text-white flex ml-3 items-center">
+      <div className="bg-white p-3 flex justify-between">
+        <span className="text-2xl font-bold text-black flex ml-3 items-center">
           {data.user?.displayName}
         </span>
         <div className="flex gap-3 mr-3">
@@ -20,7 +20,7 @@ const Chat = () => {
           <img src={More} alt="" />
         </div>
       </div>
-      <div className="bg-slate-200 flex-1 overflow-auto">
+      <div className="bg-white flex-1 overflow-auto">
         <div className="min-h-[80%]">
           <Messages />
         </div>

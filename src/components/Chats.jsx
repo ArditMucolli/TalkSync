@@ -27,14 +27,14 @@ const Chats = () => {
     dispatch({ type: "CHANGE_USER", payload: u });
   };
   return (
-    <div className="   p-2 cursor-pointer w-full">
+    <div className="p-2 cursor-pointer w-full">
       {Object.entries(chats)
         ?.sort((a, b) => b[1].date - a[1].date)
         .map((chat) => (
           <div
             onClick={() => handleSelect(chat[1].userInfo)}
             key={chat[0]}
-            className="flex items-center  hover:bg-slate-700 gap-4 flex-grow p-2"
+            className="flex items-center  hover:bg-white gap-4 flex-grow p-2"
           >
             <img
               className="w-12 h-12 rounded-full object-cover"
