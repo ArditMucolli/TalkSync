@@ -94,7 +94,7 @@ const Search = () => {
         {user && (
           <div
             onClick={handleSelect}
-            className="flex items-center hover:bg-white dark:hover:bg-slate-700 w-full p-2 rounded-lg cursor-pointer"
+            className="flex items-center hover:bg-white dark:hover:bg-slate-700 w-full p-2 rounded-lg cursor-pointer dark:text-gray-300"
           >
             <div className="flex items-center gap-4 flex-grow">
               <img
