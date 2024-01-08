@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import Cam from "../images/cam.png";
 import Add from "../images/add.png";
 import More from "../images/more.png";
@@ -20,12 +20,12 @@ const Chat = () => {
           <img src={More} alt="" />
         </div>
       </div>
-      <div className="bg-white flex-1 overflow-auto">
+      <div className="bg-white dark:bg-slate-800 flex-1 overflow-auto">
         <div className="min-h-[80%]">
           <Messages />
         </div>
       </div>
-      <div className=" bg-white">
+      <div className=" bg-white dark:bg-slate-800">
         <Input />
       </div>
     </div>

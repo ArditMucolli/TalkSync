@@ -79,7 +79,7 @@ const Chats = () => {
             </div>
           </div>
         ))}
-      <div className="fixed bottom-5 left-10 duration-100 dark:bg-slate-700 bg-gray-100 rounded">
+      <div className="fixed bottom-5 left-10 duration-100 dark:bg-slate-600 bg-gray-100 rounded">
         {options?.map((opt) => (
           <button
             key={opt.text}
