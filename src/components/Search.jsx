@@ -87,7 +87,7 @@ const Search = () => {
             value={username}
             onKeyDown={handleKey}
             onChange={(e) => setUsername(e.target.value)}
-            className=" py-2 px-4 focus:outline-none bg-white dark:bg-slate-700 rounded-lg"
+            className=" py-2 px-4 focus:outline-none bg-white dark:bg-slate-700 rounded-lg dark:text-gray-300"
           />
         </div>
         {err && <span>User not found!</span>}

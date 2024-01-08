@@ -64,7 +64,7 @@ const Chats = () => {
           <div
             onClick={() => handleSelect(chat[1].userInfo)}
             key={chat[0]}
-            className="flex items-center  hover:bg-white gap-4 flex-grow p-2"
+            className="flex items-center  hover:bg-white dark:hover:bg-slate-700 gap-4 flex-grow p-2"
           >
             <img
               className="w-12 h-12 rounded-full object-cover"
@@ -72,10 +72,12 @@ const Chats = () => {
               alt=""
             />
             <div>
-              <span className="text-lg sm:text-base font-bold">
+              <span className="text-lg sm:text-base font-bold dark:text-gray-300">
                 {chat[1].userInfo.displayName}
               </span>
-              <p className="text-sm">{chat[1].lastMessage?.text}</p>
+              <p className="text-sm dark:text-gray-300">
+                {chat[1].lastMessage?.text}
+              </p>
             </div>
           </div>
         ))}
