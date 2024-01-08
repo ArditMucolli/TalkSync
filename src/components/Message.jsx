@@ -29,7 +29,7 @@ const Message = ({ message }) => {
           alt=""
         />
         <div className="flex flex-col text-center">
-          <p className="text-sm font-semibold ">
+          <p className="text-sm font-semibold dark:text-gray-300">
             {message.senderId === currentUser.uid
               ? "Me"
               : data.user.displayName}

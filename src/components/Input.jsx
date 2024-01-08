@@ -28,9 +28,7 @@ const Input = () => {
       const uploadTask = uploadBytesResumable(storageRef, img);
 
       uploadTask.on(
-        (error) => {
-          //TODO:Handle Error
-        },
+        (error) => {},
         () => {
           getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
             await updateDoc(doc(db, "chats", data.chatId), {
@@ -89,7 +87,7 @@ const Input = () => {
         onChange={(e) => setText(e.target.value)}
         onKeyDown={handleEnterKeyPress}
         value={text}
-        className="w-full outline-none border-0 text-slate-800"
+        className="w-full outline-none border-0 text-slate-800 dark:bg-slate-800 dark:text-gray-300"
       />
       <div className="flex gap-4 ">
         <img src={Attach} alt="" className="h-8 cursor-pointer" />

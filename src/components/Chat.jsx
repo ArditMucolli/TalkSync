@@ -11,7 +11,7 @@ const Chat = () => {
   return (
     <div className="bg-zinc-300 w-3/4 h-screen flex flex-col">
       <div className="bg-white p-3 flex justify-between dark:bg-slate-800">
-        <span className="text-2xl font-bold text-black flex ml-3 items-center">
+        <span className="text-2xl font-bold text-black flex ml-3 items-center dark:text-gray-300">
           {data.user?.displayName}
         </span>
         <div className="flex gap-3 mr-3">
