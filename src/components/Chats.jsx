@@ -6,6 +6,36 @@ import { db } from "../firebase";
 
 const Chats = () => {
   const [chats, setChats] = useState([]);
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+
+  const options = [
+    {
+      icon: "sunny",
+      text: "light",
+    },
+    {
+      icon: "moon",
+      text: "dark",
+    },
+  ];
+
+  useEffect(() => {
+    const element = document.documentElement;
+
+    const setThemeClass = (newTheme) => {
+      element.classList.remove("dark", "light");
+      element.classList.add(newTheme);
+      localStorage.setItem("theme", newTheme);
+    };
+
+    setThemeClass(theme);
+
+    setThemeClass(theme);
+  }, [theme]);
+
+  const toggleTheme = (newTheme) => {
+    setTheme(newTheme);
+  };
 
   const { currentUser } = useContext(AuthContext);
   const { dispatch } = useContext(ChatContext);
@@ -49,6 +79,19 @@ const Chats = () => {
             </div>
           </div>
         ))}
+      <div className="fixed bottom-5 left-10 duration-100 dark:bg-slate-700 bg-gray-100 rounded">
+        {options?.map((opt) => (
+          <button
+            key={opt.text}
+            onClick={() => toggleTheme(opt.text)}
+            className={`w-8 h-8 leading-9 text-xl rounded-full m-1 ${
+              theme === opt.text && "text-sky-600"
+            }`}
+          >
+            <ion-icon name={opt.icon}></ion-icon>
+          </button>
+        ))}
+      </div>
     </div>
   );
 };

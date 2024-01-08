@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import Cam from "../images/cam.png";
 import Add from "../images/add.png";
 import More from "../images/more.png";
@@ -10,7 +10,7 @@ const Chat = () => {
   const { data } = useContext(ChatContext);
   return (
     <div className="bg-zinc-300 w-3/4 h-screen flex flex-col">
-      <div className="bg-white p-3 flex justify-between">
+      <div className="bg-white p-3 flex justify-between dark:bg-slate-800">
         <span className="text-2xl font-bold text-black flex ml-3 items-center">
           {data.user?.displayName}
         </span>
