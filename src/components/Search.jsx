@@ -83,18 +83,18 @@ const Search = () => {
         <div className="mb-4">
           <input
             type="text"
-            placeholder="Find a user"
+            placeholder="Find a user..."
             value={username}
             onKeyDown={handleKey}
             onChange={(e) => setUsername(e.target.value)}
-            className=" py-2 px-4 focus:outline-none  bg-white border-b-2 rounded-lg"
+            className=" py-2 px-4 focus:outline-none bg-white dark:bg-slate-700 rounded-lg"
           />
         </div>
         {err && <span>User not found!</span>}
         {user && (
           <div
             onClick={handleSelect}
-            className="flex items-center  hover:bg-white w-full p-2 rounded-lg cursor-pointer"
+            className="flex items-center hover:bg-white dark:hover:bg-slate-700 w-full p-2 rounded-lg cursor-pointer"
           >
             <div className="flex items-center gap-4 flex-grow">
               <img
